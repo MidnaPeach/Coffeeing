@@ -20,10 +20,10 @@ carafe detects whether or not carafe is in position
 
 //STANDBY- idle- not doing anything 00? 
 inputs: 
-start= ?, temp= ? , empty = ?, carafe = ?
+start= false?, temp= false? , empty = false?, carafe = false?
 
 outputs: 
-heat= false?, percolate= ?, add_water_wlight = ?, no_carafe_wlight=?
+heat= false?, percolate= false?, add_water_wlight =false ?, no_carafe_wlight=false?
 
 //----------------------------------------------------------------
 
@@ -32,7 +32,7 @@ inputs:
 start= ?, temp= ? , empty = ?, carafe = ?
 
 outputs:
-heat= TRUE, percolate= ?, add_water_wlight = ?, no_carafe_wlight=?
+heat= TRUE, percolate= false?, add_water_wlight = false?, no_carafe_wlight=false?
 
 //----------------------------------------------------------------
 
@@ -41,7 +41,7 @@ inputs:
 start= ?, temp= ? , empty = ?, carafe = ?
 
 outputs: 
-heat= TRUE, percolate= ?, add_water_wlight = ?, no_carafe_wlight=?
+heat= TRUE, percolate= TRUE, add_water_wlight = false?, no_carafe_wlight=false?
 
 //----------------------------------------------------------------
 
@@ -50,7 +50,7 @@ inputs:
 start= ?, temp= ? , empty = ?, carafe = ?
 
 outputs: 
-heat= TRUE, percolate= ?, add_water_wlight = ?, no_carafe_wlight=?
+heat= TRUE, percolate= false?, add_water_wlight =false ?, no_carafe_wlight=false?
 
 //----------------------------------------------------------------
 
@@ -59,7 +59,7 @@ inputs:
 start= ?, temp= ? , empty = ?, carafe = ?
 
 outputs: 
-heat= ?, percolate= ?, add_water_wlight =TRUE, no_carafe_wlight=?
+heat= false?, percolate= false?, add_water_wlight =TRUE, no_carafe_wlight=false?
 
 //----------------------------------------------------------------
 
@@ -68,7 +68,7 @@ inputs:
 start= ?, temp= ? , empty = ?, carafe = ?
 
 outputs: 
-heat= ?, percolate= ?, add_water_wlight = ?, no_carafe_wlight=?
+heat= false?, percolate= false?, add_water_wlight= false?, no_carafe_wlight=TRUE
 
 //----------------------------------------------------------------
 */
