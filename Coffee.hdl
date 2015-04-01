@@ -85,7 +85,7 @@ CHIP Coffee {
 	PARTS:
 
 	//code here:
-	
+	DFF(); 	
 	
 
 	nextS2 = (
