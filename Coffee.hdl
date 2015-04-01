@@ -2,7 +2,78 @@
 
 //Coffee.hdl
 
+/* 
+//when we say temp, we mean temperature
 
+
+//INPUTS
+start is true when start is being pressed
+
+temp true when temp >= 195 F
+
+empty true when no water
+
+carafe detects whether or not carafe is in position
+
+
+//---States-------------------------------------------------------
+
+//STANDBY- idle- not doing anything 00? 
+inputs: 
+start= ?, temp= ? , empty = ?, carafe = ?
+
+outputs: 
+heat= false?, percolate= ?, add_water_wlight = ?, no_carafe_wlight=?
+
+//----------------------------------------------------------------
+
+//HEATING WATER -heating up, fixin to brew. 
+inputs: 
+start= ?, temp= ? , empty = ?, carafe = ?
+
+outputs:
+heat= TRUE, percolate= ?, add_water_wlight = ?, no_carafe_wlight=?
+
+//----------------------------------------------------------------
+
+//BREWING - hot water is going into brew chamber. 
+inputs: 
+start= ?, temp= ? , empty = ?, carafe = ?
+
+outputs: 
+heat= TRUE, percolate= ?, add_water_wlight = ?, no_carafe_wlight=?
+
+//----------------------------------------------------------------
+
+//SNEAK A CUP - carafe is gone. 
+inputs: 
+start= ?, temp= ? , empty = ?, carafe = ?
+
+outputs: 
+heat= TRUE, percolate= ?, add_water_wlight = ?, no_carafe_wlight=?
+
+//----------------------------------------------------------------
+
+//ADD WATER - warning light flashing saying needs water
+inputs: 
+start= ?, temp= ? , empty = ?, carafe = ?
+
+outputs: 
+heat= ?, percolate= ?, add_water_wlight =TRUE, no_carafe_wlight=?
+
+//----------------------------------------------------------------
+
+//NOT SMART - warning light says carafe is gone
+inputs: 
+start= ?, temp= ? , empty = ?, carafe = ?
+
+outputs: 
+heat= ?, percolate= ?, add_water_wlight = ?, no_carafe_wlight=?
+
+//----------------------------------------------------------------
+*/
+
+//real code here yo
 
 
 
