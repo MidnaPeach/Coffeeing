@@ -5,7 +5,6 @@
 /* 
 //when we say temp, we mean temperature
 
-
 //INPUTS
 start is true when start is being pressed
 
@@ -24,6 +23,9 @@ start= false?, temp= false? , empty = false?, carafe = false?
 
 outputs: 
 heat= false?, percolate= false?, add_water_wlight =false ?, no_carafe_wlight=false?
+
+//
+
 
 //----------------------------------------------------------------
 
@@ -76,4 +78,20 @@ heat= false?, percolate= false?, add_water_wlight= false?, no_carafe_wlight=TRUE
 //real code here yo
 
 
+CHIP Coffee {
+	IN start, temp, empty, carafe;
+	OUT heat, percolate, add_water_warning_light, no_carafe_warning_light;
+	
+	PARTS:
+
+	//code here:
+	
+	
+
+	nextS2 = (
+
+
+
+
+}
 
