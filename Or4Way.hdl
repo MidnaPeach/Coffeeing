@@ -1,0 +1,11 @@
+//multiway or gate
+
+CHIP Or4Way{
+	IN a, b, c, d;
+	OUT out;
+
+	PARTS:
+		Or(a=a, b=b, out=aORb);
+		Or(a=c, b=d, out=cORd);
+		Or(a=aORa, b=cORd, out=out);
+}

@@ -1,0 +1,12 @@
+//multiway And8 way gate
+
+CHIP And8Way{
+    IN a, b, c, d, e, f, g, h;
+    OUT out;
+
+    PARTS:
+		And4Way(a=a, b=b, c=c, d=d, out=And1);
+		And4Way(a=e, b=f, c=g, d=h, out=And2);
+		And(a=And1, b=And2, out=out);
+
+}
