@@ -80,18 +80,21 @@ heat= false?, percolate= false?, add_water_wlight= false?, no_carafe_wlight=TRUE
 
 CHIP Coffee {
 	IN start, temp, empty, carafe;
-	OUT heat, percolate, add_water_warning_light, no_carafe_warning_light;
+	OUT heat, percolate, addWater, noCarafe;
 	
 	PARTS:
 
 	//code here:
-	DFF(); 	
+	//not sure if we need to make s0 and next s0 pins or chips, I just don't know. We need dffs, which 
+	//take an in and an out. 
+	DFF(in= , out= ); 	
 	
 
-	nextS2 = (
+	//nextS0 = 
+	
+	//nextS1 = 
 
-
-
+	//nextS2 = 
 
 }
 
