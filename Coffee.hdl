@@ -92,26 +92,37 @@ CHIP Coffee {
 	Not(in=temp, out=notTemp);
 	Not(in=empty, out=notEmpty);
 	Not(in=carafe, out=notCarafe);
-	Not(in=s0, out=notS0);
-	Not(in=s1, out=notS1);
-	Not(in=s2, out=notS2);
+	Not(in=S0, out=notS0);
+	Not(in=S1, out=notS1);
+	Not(in=S2, out=notS2);
 
 
-	DFF(in=nexts0, out=s0); 	
+	DFF(in=nexts0, out=S0); 	
 	
-	DFF(in=nexts1, out=s1);
+	DFF(in=nexts1, out=S1);
 
-	DFF(in=nexts1, out=s2);
+	DFF(in=nexts1, out=S2);
 
+//------nextS0 logic----------------------
+	And8Way(a=notS2, b=notS1, c=notS0, d=start, e=empty, f=true, g=true, h=true, out=s0internal1); 	
+	And8Way(a=notS2, b=notS1, c=notS0, d=start, e=carafe, f=notEmpty, g=true, h=true, out=s0internal2); 	
+	And4Way(a=notS2, b=S1, c=S0, d=notTemp, out=s0internal3); 	
+	And8Way(a=notS2, b=notS1, c=notS0, d=start, e=notCarafe, f=notEmpty, g=true, h=true, out=s0internal4); 	
 
+	Or4Way(a= , b= , c= , d= , out=nextS0);
+
+//-----nextS1 logic-----------------------
 	
-
-
-
-
-
-	Or(a=, b=, out=nexts0);
+	
+	
+	
+	
 	Or(a=, b=, out=nexts1);
+
+//----------------------------------------
+
+
+
 	Or(a=, b=, out=nexts2);
 
 
