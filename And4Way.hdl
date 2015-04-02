@@ -1,0 +1,11 @@
+//multiway or gate
+
+CHIP And4Way{
+	IN a, b, c, d;
+	OUT out;
+
+	PARTS:
+		And(a=a, b=b, out=aANDb);
+		And(a=c, b=d, out=cANDd);
+		And(a=aANDa, b=cANDd, out=out);
+}
