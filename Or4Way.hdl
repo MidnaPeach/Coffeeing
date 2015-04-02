@@ -7,5 +7,5 @@ CHIP Or4Way{
 	PARTS:
 		Or(a=a, b=b, out=aORb);
 		Or(a=c, b=d, out=cORd);
-		Or(a=aORa, b=cORd, out=out);
+		Or(a=aORb, b=cORd, out=out);
 }
