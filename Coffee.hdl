@@ -137,9 +137,13 @@ CHIP Coffee {
 //----nextS2------------------------------
 
 	//sneak a cup
-	And8Way(a=, b=, c=, d=, e=, f=, g=, h=, out=  );
+	And8Way(a=notS2, b=s1, c=notS0, d=carafe, e=notEmpty, f=true, g=true, h=true, out=s2internal1);
+	And8Way(a=s2, b=s1, c=notS0, d=notCarafe, e=true, f=true, g=true, h=true, out=s2internal2);
+
+	//not smart
+	And8Way(a=notS0, b=notS1, c=notS2, d=start, e=notCarafe, f=notEmpty, g=true, h=true, out=s2internal3);
 	
-	Or(a=, b=, out=nexts2);
+	Or4Way(a=s2internal1, b=s2internal2,c=s2internal3,d=false, out=nexts2);
 
 
 //----------------------------------------
