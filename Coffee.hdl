@@ -14,7 +14,6 @@ empty true when no water
 
 carafe detects whether or not carafe is in position
 
-
 //---States-------------------------------------------------------
 
 //STANDBY- idle- not doing anything 00? 
