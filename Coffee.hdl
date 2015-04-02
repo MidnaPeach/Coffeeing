@@ -54,7 +54,7 @@ CHIP Coffee {
 	And8Way(a=notS2, b=s1,c=notS0,d=carafe,e=notEmpty,f=true,g=true,h=true,out=s1internal5);
 	And8Way(a=s2, b=s1,c=notS0, d=notCarafe,e=true,f=true,g=true,h=true,out=s1internal6);
 	
-	Or8Way(a=s1internal1, b=s1internal2,c=s1internal3,d=s1internal4, e=s1internal5, f=s1internal6, g=false, h=false, out=nexts1);
+	Or8(a=s1internal1, b=s1internal2,c=s1internal3,d=s1internal4, e=s1internal5, f=s1internal6, g=false, h=false, out=nexts1);
 
 //----------------------------------------
 

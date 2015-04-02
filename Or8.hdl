@@ -1,0 +1,12 @@
+//multiway Or8 way gate
+
+CHIP Or8{
+    IN a, b, c, d, e, f, g, h;
+    OUT out;
+
+    PARTS:
+		Or4Way(a=a, b=b, c=c, d=d, out=Or1);
+		Or4Way(a=e, b=f, c=g, d=h, out=Or2);
+		Or(a=Or1, b=Or2, out=out);
+
+}
