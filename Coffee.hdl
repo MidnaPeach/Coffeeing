@@ -114,7 +114,9 @@ CHIP Coffee {
 	//not smart
 	And8Way(a=notS2, b=notS1, c=notS0, d=start, e=notCarafe, f=notEmpty, g=true, h=true, out=s0internal4); 	
 
-	Or4Way(a= , b= , c= , d= , out=nextS0);
+	Or4Way(a=s0internal1, b=s0internal2, c=s0internal3, d=s0internal4, out=nextS0);
+
+//----------------------------------------
 
 //-----nextS1 logic-----------------------
 	//brewing	
@@ -136,11 +138,15 @@ CHIP Coffee {
 
 //----------------------------------------
 
+//----nextS2------------------------------
 
-
+	//sneak a cup
+	And8Way(a=, b=, c=, d=, e=, f=, g=, h=, out=  );
+	
 	Or(a=, b=, out=nexts2);
 
 
+//----------------------------------------
 
 }
 
