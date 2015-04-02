@@ -87,6 +87,15 @@ CHIP Coffee {
 	//code here:
 	//not sure if we need to make s0 and next s0 pins or chips, I just don't know. We need dffs, which 
 	//take an in and an out. 
+	Not(in=start,out=notStart);
+	Not(in=temp,out=notTemp);
+	Not(in=empty,out=notEmpty);
+	Not(in=carafe,out=notCarafe);
+	Not(in=s0,out=notS0);
+	Not(in=s1,out=notS1);
+	Not(in=s2,out=notS2);
+
+
 	DFF(in=nexts0, out=s0); 	
 	
 	DFF(in=nexts1, out=s1);
