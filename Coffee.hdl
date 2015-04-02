@@ -87,14 +87,12 @@ CHIP Coffee {
 	//code here:
 	//not sure if we need to make s0 and next s0 pins or chips, I just don't know. We need dffs, which 
 	//take an in and an out. 
-	DFF(in= , out= ); 	
+	DFF(in=nexts0, out=s0); 	
 	
+	DFF(in=nexts1, out=s1);
 
-	//nextS0 = 
-	
-	//nextS1 = 
+	DFF(in=nexts1, out=s2);
 
-	//nextS2 = 
 
 }
 
