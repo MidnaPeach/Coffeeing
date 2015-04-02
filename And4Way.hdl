@@ -7,5 +7,5 @@ CHIP And4Way{
 	PARTS:
 		And(a=a, b=b, out=aANDb);
 		And(a=c, b=d, out=cANDd);
-		And(a=aANDa, b=cANDd, out=out);
+		And(a=aANDb, b=cANDd, out=out);
 }
