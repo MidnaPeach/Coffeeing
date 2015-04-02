@@ -21,9 +21,7 @@ CHIP Coffee {
 
 
 	DFF(in=nextS0, out=S0); 	
-	
 	DFF(in=nextS1, out=S1);
-
 	DFF(in=nextS2, out=S2);
 
 //------nextS0 logic----------------------
@@ -69,7 +67,6 @@ CHIP Coffee {
 	
 	Or4Way(a=S2internal1, b=S2internal2,c=S2internal3,d=false, out=nextS2);
 
-
 //----------------------------------------
 
 //standby
@@ -77,7 +74,7 @@ And4Way(a=notS0,b=notS1,c=notS2,d=true, out=standby);
 //if 000, its true, otherwise no
 
 //add water
-And4Way(a=notS0,b=notS1,c=S2,d=true, out=addwater);
+And4Way(a=notS0,b=notS1,c=S2,d=true, out=internalAddWater);
 //if 001, its true, otherwise no
 
 //brewing
@@ -95,6 +92,16 @@ And4Way(a=S0,b=S1,c=notS2,d=true, out=sneak);
 //notsmart
 And4Way(a=S0,b=S1,c=S2,d=true, out=notsmart);
 //if 111, its true, otherwise no
+
+
+Or4Way(a=heating, b=brewing, c=sneak, d=false, out=heat);
+
+Or4Way(a=false, b=brewing, c=false, d=false, out=percolate);
+
+Or4Way(a=internalAddWater, b=false, c=false, d=false, out=addWater);
+
+Or4Way(a=notsmart, b=false, c=false, d=false, out=noCarafe);
+
 
 }
 
