@@ -119,20 +119,17 @@ CHIP Coffee {
 //-----nextS1 logic-----------------------
 	//brewing	
 	And8Way(a=notS2, b=s1,c=s0,d=temp,e=true,f=true,g=true,h=true,out=s1internal1);
-	And8Way(a=notS2, b=s1,c=notS0,d=carafe,e=no,f,g=,h=,out=s1internal2);
+	And8Way(a=notS2, b=s1,c=notS0,d=carafe,e=notEmpty,f=true,g=true,h=true,out=s1internal2);
 
 	//heating water
-	And8Way(a=, b=,c=,d=,e=f,g=,h=,out=s1internal3);
-	And8Way(a=, b=,c=,d=,e=f,g=,h=,out=s1internal4);
+	And8Way(a=notS2, b=s1, c=s0, d=notTemp, e=true, f=true, g=true, h=true, out=s1internal3);
+	And8Way(a=notS2, b=notS1, c=notS0, d=start, e=carafe, f=notEmpty, g=true, h=true, out=s1internal4);
 
 	//sneak a cup
-	And8Way(a=, b=,c=,d=,e=f,g=,h=,out=s1internal5);
-	And8Way(a=, b=,c=,d=,e=f,g=,h=,out=s1internal6);
+	And8Way(a=notS2, b=s1,c=notS0,d=carafe,e=notEmpty,f=true,g=true,h=true,out=s1internal5);
+	And8Way(a=s2, b=s1,c=notS0, d=notCarafe,e=true,f=true,g=true,h=true,out=s1internal6);
 	
-	
-	
-	
-	Or(a=, b=, out=nexts1);
+	Or8Way(a=s1internal1, b=s1internal2,c=s1internal3,d=s1internal4, e=s1internal5, f=s1internal6, g=false, h=false, out=nexts1);
 
 //----------------------------------------
 
