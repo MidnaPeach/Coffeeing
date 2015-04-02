@@ -43,18 +43,18 @@ CHIP Coffee {
 
 //-----nextS1 logic-----------------------
 	//brewing	
-	And8Way(a=notS2, b=S1,c=S0,d=temp,e=true,f=true,g=true,h=true,out=S1internal1);
-	And8Way(a=notS2, b=S1,c=notS0,d=carafe,e=notEmpty,f=true,g=true,h=true,out=S1internal2);
+	And8Way(a=notS2, b=S1, c=S0, d=temp, e=true, f=true, g=true, h=true, out=S1internal1);
+	And8Way(a=notS2, b=S1, c=notS0, d=carafe, e=notEmpty, f=true, g=true, h=true, out=S1internal2);
 
 	//heating water
 	And8Way(a=notS2, b=S1, c=S0, d=notTemp, e=true, f=true, g=true, h=true, out=S1internal3);
 	And8Way(a=notS2, b=notS1, c=notS0, d=start, e=carafe, f=notEmpty, g=true, h=true, out=S1internal4);
 
 	//sneak a cup
-	And8Way(a=notS2, b=S1,c=notS0,d=carafe,e=notEmpty,f=true,g=true,h=true,out=S1internal5);
-	And8Way(a=S2, b=S1,c=notS0, d=notCarafe,e=true,f=true,g=true,h=true,out=S1internal6);
+	And8Way(a=notS2, b=S1, c=notS0, d=carafe, e=notEmpty, f=true, g=true, h=true, out=S1internal5);
+	And8Way(a=S2, b=S1,c=notS0, d=notCarafe, e=true, f=true, g=true, h=true, out=S1internal6);
 	
-	Or8(a=S1internal1, b=S1internal2,c=S1internal3,d=S1internal4, e=S1internal5, f=S1internal6, g=false, h=false, out=nextS1);
+	Or8(a=S1internal1, b=S1internal2, c=S1internal3, d=S1internal4, e=S1internal5, f=S1internal6, g=false, h=false, out=nextS1);
 
 //----------------------------------------
 
@@ -95,18 +95,17 @@ And4Way(a=S0,b=S1,c=notS2,d=true, out=sneak);
 //notsmart
 And4Way(a=S0,b=S1,c=S2,d=true, out=notsmart);
 //if 111, its true, otherwise no
+
 }
+
 
 /* 
 //when we say temp, we mean temperature
 
 //INPUTS
 start is true when start is being pressed
-
 temp true when temp >= 195 F
-
 empty true when no water
-
 carafe detects whether or not carafe is in position
 
 //---States-------------------------------------------------------
@@ -116,9 +115,7 @@ inputs:
 start= false?, temp= false? , empty = false?, carafe = false?
 
 outputs: 
-heat= false?, percolate= false?, add_water_wlight =false ?, no_carafe_wlight=false?
-
-//
+heat= false?, percolate= false?, addWater =false ?, noCarafe=false?
 
 
 //----------------------------------------------------------------
@@ -128,7 +125,7 @@ inputs:
 start= ?, temp= ? , empty = ?, carafe = ?
 
 outputs:
-heat= TRUE, percolate= false?, add_water_wlight = false?, no_carafe_wlight=false?
+heat= TRUE, percolate= false?, addWater = false?, noCarafe=false?
 
 //----------------------------------------------------------------
 
@@ -137,7 +134,7 @@ inputs:
 start= ?, temp= ? , empty = ?, carafe = ?
 
 outputs: 
-heat= TRUE, percolate= TRUE, add_water_wlight = false?, no_carafe_wlight=false?
+heat= TRUE, percolate= TRUE, addWater = false?, noCarafe=false?
 
 //----------------------------------------------------------------
 
@@ -146,7 +143,7 @@ inputs:
 start= ?, temp= ? , empty = ?, carafe = ?
 
 outputs: 
-heat= TRUE, percolate= false?, add_water_wlight =false ?, no_carafe_wlight=false?
+heat= TRUE, percolate= false?, addWater =false ?, noCarafe=false?
 
 //----------------------------------------------------------------
 
@@ -155,7 +152,7 @@ inputs:
 start= ?, temp= ? , empty = ?, carafe = ?
 
 outputs: 
-heat= false?, percolate= false?, add_water_wlight =TRUE, no_carafe_wlight=false?
+heat= false?, percolate= false?, addWater =TRUE, noCarafe=false?
 
 //----------------------------------------------------------------
 
@@ -164,7 +161,7 @@ inputs:
 start= ?, temp= ? , empty = ?, carafe = ?
 
 outputs: 
-heat= false?, percolate= false?, add_water_wlight= false?, no_carafe_wlight=TRUE
+heat= false?, percolate= false?, addWater= false?, noCarafe=TRUE
 
 //----------------------------------------------------------------
 */
