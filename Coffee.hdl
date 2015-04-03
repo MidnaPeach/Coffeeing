@@ -70,37 +70,60 @@ CHIP Coffee {
 //----------------------------------------
 
 //standby
-And4Way(a=notS0,b=notS1,c=notS2,d=true, out=standby);
-//if 000, its true, otherwise no
+And4Way(a=notS2, b=notS1, c=notS0, d=true, out=standby);
+//--if 000, its true, otherwise no
+
+
+
 
 //add water
-And4Way(a=notS0,b=notS1,c=S2,d=true, out=internalAddWater);
-//if 001, its true, otherwise no
+And4Way(a=notS2, b=notS1, c=S0, d=true, out=internalAddWater);
+//--if 001, its true, otherwise no
+
+
+
 
 //brewing
-And4Way(a=notS0,b=S1,c=notS2,d=true, out=brewing);
-//if 010, its true, otherwise no
+And4Way(a=notS2, b=S1, c=notS0, d=true, out=brewing);
+//--if 010, its true, otherwise no
+
+
+
 
 //heating
-And4Way(a=notS0,b=S1,c=S2,d=true, out=heating);
-//if 011, its true, otherwise no
+And4Way(a=notS2, b=S1, c=S0, d=true, out=heating);
+//--if 011, its true, otherwise no
+
+
+
 
 //sneak
-And4Way(a=S0,b=S1,c=notS2,d=true, out=sneak);
-//if 110, its true, otherwise no
+And4Way(a=S2, b=S1, c=notS0, d=true, out=sneak);
+//--if 110, its true, otherwise no
+
+
+
 
 //notsmart
-And4Way(a=S0,b=S1,c=S2,d=true, out=notsmart);
-//if 111, its true, otherwise no
+And4Way(a=S2, b=S1, c=S0, d=true, out=notsmart);
+//--if 111, its true, otherwise no
 
 
-Or4Way(a=heating, b=brewing, c=sneak, d=false, out=heat);
 
-Or4Way(a=false, b=brewing, c=false, d=false, out=percolate);
 
-Or4Way(a=internalAddWater, b=false, c=false, d=false, out=addWater);
 
-Or4Way(a=notsmart, b=false, c=false, d=false, out=noCarafe);
+
+
+
+
+
+
+
+
+//Or4Way(a=heating, b=brewing, c=sneak, d=false, out=heat);
+//Or4Way(a=false, b=brewing, c=false, d=false, out=percolate);
+//Or4Way(a=internalAddWater, b=false, c=false, d=false, out=addWater);
+//Or4Way(a=notsmart, b=false, c=false, d=false, out=noCarafe);
 
 
 }
