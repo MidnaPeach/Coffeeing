@@ -7,10 +7,7 @@ CHIP Coffee {
 	
 	PARTS:
 
-	//code here:
-	//not sure if we need to make S0 and next S0 pins or chips, I just don't know. We need dffs, which 
-	//take an in and an out. 
-
+	//not gates
 	Not(in=start, out=notStart);
 	Not(in=temp, out=notTemp);
 	Not(in=empty, out=notEmpty);
@@ -94,23 +91,11 @@ And4Way(a=S2, b=S1, c=S0, d=true, out=notsmart);
 //--if 111, its true, otherwise no
 
 
-Or4Way(a=heating, b=brewing, c=sneak, d=false, out=heat); 
-Or(a=brewing, b=false, out=percolate); 
 
-
-
-
-
-
-
-
-
-
-
-//Or4Way(a=heating, b=brewing, c=sneak, d=false, out=heat);
-//Or4Way(a=false, b=brewing, c=false, d=false, out=percolate);
-//Or4Way(a=internalAddWater, b=false, c=false, d=false, out=addWater);
-//Or4Way(a=notsmart, b=false, c=false, d=false, out=noCarafe);
+Or4Way(a=heating, b=brewing, c=sneak, d=false, out=heat);
+Or4Way(a=false, b=brewing, c=false, d=false, out=percolate);
+Or4Way(a=internalAddWater, b=false, c=false, d=false, out=addWater);
+Or4Way(a=notsmart, b=false, c=false, d=false, out=noCarafe);
 
 
 }
