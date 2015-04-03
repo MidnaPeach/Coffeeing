@@ -73,42 +73,29 @@ CHIP Coffee {
 And4Way(a=notS2, b=notS1, c=notS0, d=true, out=standby);
 //--if 000, its true, otherwise no
 
-
-
-
 //add water
 And4Way(a=notS2, b=notS1, c=S0, d=true, out=internalAddWater);
 //--if 001, its true, otherwise no
-
-
-
 
 //brewing
 And4Way(a=notS2, b=S1, c=notS0, d=true, out=brewing);
 //--if 010, its true, otherwise no
 
-
-
-
 //heating
 And4Way(a=notS2, b=S1, c=S0, d=true, out=heating);
 //--if 011, its true, otherwise no
 
-
-
-
 //sneak
 And4Way(a=S2, b=S1, c=notS0, d=true, out=sneak);
 //--if 110, its true, otherwise no
-
-
-
 
 //notsmart
 And4Way(a=S2, b=S1, c=S0, d=true, out=notsmart);
 //--if 111, its true, otherwise no
 
 
+Or4Way(a=heating, b=brewing, c=sneak, d=false, out=heat); 
+Or(a=brewing, b=false, out=percolate); 
 
 
 
@@ -141,55 +128,36 @@ carafe detects whether or not carafe is in position
 //---States-------------------------------------------------------
 
 //STANDBY- idle- not doing anything 00? 
-inputs: 
-start= false?, temp= false? , empty = false?, carafe = false?
-
 outputs: 
 heat= false?, percolate= false?, addWater =false ?, noCarafe=false?
-
 
 //----------------------------------------------------------------
 
 //HEATING WATER -heating up, fixin to brew. 
-inputs: 
-start= ?, temp= ? , empty = ?, carafe = ?
-
 outputs:
 heat= TRUE, percolate= false?, addWater = false?, noCarafe=false?
 
 //----------------------------------------------------------------
 
 //BREWING - hot water is going into brew chamber. 
-inputs: 
-start= ?, temp= ? , empty = ?, carafe = ?
-
 outputs: 
 heat= TRUE, percolate= TRUE, addWater = false?, noCarafe=false?
 
 //----------------------------------------------------------------
 
 //SNEAK A CUP - carafe is gone. 
-inputs: 
-start= ?, temp= ? , empty = ?, carafe = ?
-
 outputs: 
 heat= TRUE, percolate= false?, addWater =false ?, noCarafe=false?
 
 //----------------------------------------------------------------
 
 //ADD WATER - warning light flashing saying needs water
-inputs: 
-start= ?, temp= ? , empty = ?, carafe = ?
-
 outputs: 
 heat= false?, percolate= false?, addWater =TRUE, noCarafe=false?
 
 //----------------------------------------------------------------
 
 //NOT SMART - warning light says carafe is gone
-inputs: 
-start= ?, temp= ? , empty = ?, carafe = ?
-
 outputs: 
 heat= false?, percolate= false?, addWater= false?, noCarafe=TRUE
 
